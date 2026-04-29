@@ -1,80 +1,75 @@
-"""Módulo para el cálculo de integrales mediante Cuadratura Gaussiana.
-
-Este módulo proporciona herramientas para aproximar integrales definidas
-utilizando los pesos y nodos de los polinomios de Legendre.
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 
-def obtener_puntos_y_pesos(grado_n):
-    """Genera nodos y pesos de Gauss-Legendre.
-
-    Args:
-        grado_n (int): Número de puntos de evaluación.
-
-    Returns:
-        tuple: (nodos, pesos) en el intervalo [-1, 1].
-
-    Example:
-        >>> nodos, pesos = obtener_puntos_y_pesos(2)
-        >>> len(nodos)
-        2
+def gaussxw(N):
     """
-    return np.polynomial.legendre.leggauss(grado_n)
-
-def reescalar_espacio_muestreo(nodos_std, pesos_std, a, b):
-    """Mapea los nodos y pesos del intervalo [-1, 1] al intervalo [a, b].
-
+    Calcula nodos y pesos para la cuadratura de Gauss-Legendre.
+    
     Args:
-        nodos_std (ndarray): Nodos originales.
-        pesos_std (ndarray): Pesos originales.
+        N (int): Número de puntos de integración.
+        
+    Returns:
+        tuple: (nodos, pesos) en el intervalo estándar [-1, 1].
+        
+    Example:
+        >>> x, w = gaussxw(10)
+    """
+    a = np.linspace(3, 4 * N - 1, N) / (4 * N + 2)
+    x = np.cos(np.pi * a + 1 / (8 * N * N * np.tan(a)))
+    epsilon = 1e-15
+    delta = 1.0
+    while delta > epsilon:
+        p1 = np.ones(N, float)
+        p2 = np.zeros(N, float)
+        for j in range(N):
+            p3 = p2
+            p2 = p1
+            p1 = ((2 * j + 1) * x * p2 - j * p3) / (j + 1)
+        dp = (N + 1) * (p2 - x * p1) / (1 - x * x)
+        dx = p1 / dp
+        x -= dx
+        delta = max(abs(dx))
+    w = 2 * (N + 1) * (N + 1) / (N * N * (1 - x * x) * dp * dp)
+    return x, w
+
+def gaussxwab(N, a, b):
+    """
+    Escala los puntos y pesos al intervalo [a, b].
+    
+    Args:
+        N (int): Número de puntos.
         a (float): Límite inferior.
         b (float): Límite superior.
-
-    Returns:
-        tuple: (nodos_mapeados, pesos_mapeados).
-
-    Example:
-        >>> x, w = reescalar_espacio_muestreo(np.array([-1, 1]), np.array([1, 1]), 0, 10)
-        >>> x
-        array([ 0., 10.])
     """
-    x_m = 0.5 * (b - a) * nodos_std + 0.5 * (b + a)
-    w_m = 0.5 * (b - a) * pesos_std
-    return x_m, w_m
+    x, w = gaussxw(N)
+    xp = 0.5 * (b - a) * x + 0.5 * (b + a)
+    wp = 0.5 * (b - a) * w
+    return xp, wp
 
-def calcular_integral_gaussiana(func, lim_inf, lim_sup, orden):
-    """Calcula la aproximación numérica de una integral.
+def f(x):
+    """Función objetivo: sin(x^2)."""
+    return np.sin(x**2)
 
-    Args:
-        func (callable): Función a integrar.
-        lim_inf (float): Límite inferior.
-        lim_sup (float): Límite superior.
-        orden (int): Número de puntos.
-
-    Returns:
-        float: Valor aproximado de la integral.
-
-    Example:
-        >>> f = lambda x: x**2
-        >>> calcular_integral_gaussiana(f, 0, 1, 3)
-        0.3333333333333333
-    """
-    nodos, pesos = obtener_puntos_y_pesos(orden)
-    x_i, w_i = reescalar_espacio_muestreo(nodos, pesos, lim_inf, lim_sup)
-    return np.sum(w_i * func(x_i))
+def main():
+    """Ejecuta el cálculo y genera el gráfico de convergencia."""
+    a, b = 0, np.pi
+    N_range = range(1, 51)
+    results = []
+    
+    for n in N_range:
+        x, w = gaussxwab(n, a, b)
+        results.append(np.sum(w * f(x)))
+        
+    plt.figure(figsize=(10, 6))
+    plt.plot(N_range, results, 'bo-', label='Aproximación')
+    plt.axhline(y=0.77265, color='r', linestyle='--', label='Valor de convergencia')
+    plt.xlabel('Número de puntos (N)')
+    plt.ylabel('Valor de la integral')
+    plt.title('Convergencia de la Cuadratura Gaussiana para $sin(x^2)$')
+    plt.legend()
+    plt.grid(True)
+    plt.savefig('docs/img/convergencia.png')
+    print(f"Gráfico generado y resultado final (N=50): {results[-1]}")
 
 if __name__ == "__main__":
-    f = lambda x: np.sin(x**2)
-    a, b = 0, np.pi
-    rango_n = range(1, 51)
-    estimaciones = [calcular_integral_gaussiana(f, a, b, n) for n in rango_n]
-    
-    plt.figure(figsize=(10, 6))
-    plt.plot(rango_n, estimaciones, 'o-', color='teal', markersize=3)
-    plt.title(r'Convergencia de $\int_{0}^{\pi} \sin(x^2) dx$')
-    plt.xlabel('N')
-    plt.ylabel('I')
-    plt.grid(True)
-    plt.savefig('convergencia.png')
+    main()

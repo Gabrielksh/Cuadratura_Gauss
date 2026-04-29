@@ -1,4 +1,4 @@
-site_name: Tarea 2 - Física Computacional
+site_name: Cuadratura Gaussiana - Tarea 2
 theme:
   name: material
 
@@ -9,13 +9,14 @@ plugins:
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.superfences
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - Inicio: index.md
-  - Explicación: explanation.md
-  - Tutorial: tutorials.md
-  - Referencia: reference.md
+  - Introducción: index.md
+  - Teoría y Explicación: explanation.md
+  - Tutorial de Uso: tutorials.md
+  - Referencia del Código: reference.md

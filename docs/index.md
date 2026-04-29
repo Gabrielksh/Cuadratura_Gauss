@@ -1,7 +1,7 @@
-# Introducción a la Cuadratura Gaussiana
+# Introducción al Problema
 
-En este proyecto presento la solución a un problema común en física: calcular una integral que no se puede resolver de forma "manual" o analítica. Específicamente, estamos trabajando con:
+En física computacional, muchas integrales carecen de una solución analítica. Un ejemplo clásico es la integral:
 
 $$I = \int_{0}^{\pi} \sin(x^2) dx$$
 
-Este tipo de funciones son interesantes porque, aunque se ven sencillas, requieren de métodos computacionales para obtener un valor preciso. A continuación se presenta la implementación de la Cuadratura Gaussiana para resolverlo.
+Este proyecto implementa el método de **Cuadratura Gaussiana** para obtener una aproximación numérica altamente eficiente y precisa, explorando su convergencia conforme aumenta el número de puntos de evaluación.
