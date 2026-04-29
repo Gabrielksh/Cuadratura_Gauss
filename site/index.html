@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduccion-al-problema" class="md-skip">
+        <a href="#aproximacion-numerica-mediante-cuadratura-de-gauss-legendre" class="md-skip">
           Skip to content
         </a>
       
@@ -205,6 +205,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -221,6 +239,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-y-contexto-teorico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción y Contexto Teórico
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentos-del-metodo-utilizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fundamentos del Método Utilizado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivos del Proyecto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultados-esperados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultados Esperados
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -327,6 +408,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-y-contexto-teorico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción y Contexto Teórico
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentos-del-metodo-utilizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fundamentos del Método Utilizado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivos del Proyecto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultados-esperados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultados Esperados
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -342,10 +475,30 @@
 
 
 
-<h1 id="introduccion-al-problema">Introducción al Problema</h1>
-<p>En física computacional, muchas integrales carecen de una solución analítica. Un ejemplo clásico es la integral:</p>
-<div class="arithmatex">\[I = \int_{0}^{\pi} \sin(x^2) dx\]</div>
-<p>Este proyecto implementa el método de <strong>Cuadratura Gaussiana</strong> para obtener una aproximación numérica altamente eficiente y precisa, explorando su convergencia conforme aumenta el número de puntos de evaluación.</p>
+<h1 id="aproximacion-numerica-mediante-cuadratura-de-gauss-legendre">Aproximación Numérica mediante Cuadratura de Gauss-Legendre</h1>
+<h2 id="introduccion-y-contexto-teorico">Introducción y Contexto Teórico</h2>
+<p>En el ámbito de la física computacional y el análisis numérico, se presenta con frecuencia el desafío de resolver integrales que no poseen una solución analítica mediante funciones elementales. Un ejemplo clásico de este fenómeno es la integral de la función <span class="arithmatex">\(f(x) = \sin(x^2)\)</span>, la cual pertenece a la familia de las <strong>Integrales de Fresnel</strong>.</p>
+<p>Se ha determinado que estas integrales son fundamentales para describir fenómenos de difracción óptica y propagación de ondas. No obstante, al carecer de una primitiva expresable en términos de funciones básicas, su resolución requiere el empleo de métodos numéricos de alta precisión. Este problema guarda una estrecha relación teórica con otras integrales no elementales de gran importancia en las ciencias exactas, tales como:</p>
+<ul>
+<li><strong>La integral de Gauss:</strong> <span class="arithmatex">\(\int e^{-x^2} dx\)</span>, esencial en la mecánica estadística y la termodinámica.</li>
+<li><strong>La integral logarítmica:</strong> <span class="arithmatex">\(\int \frac{1}{\ln(x)} dx\)</span>, de vital importancia en la teoría de números.</li>
+</ul>
+<h2 id="fundamentos-del-metodo-utilizado">Fundamentos del Método Utilizado</h2>
+<p>Para el abordaje de este problema, se ha implementado el método de la <strong>Cuadratura de Gauss-Legendre</strong>. A diferencia de los métodos de Newton-Cotes (como las reglas del Trapecio o Simpson), que dependen de puntos equiespaciados, la Cuadratura Gaussiana optimiza la ubicación de los puntos de evaluación para maximizar la exactitud polinomial.</p>
+<p>El algoritmo se basa en la utilización de polinomios ortogonales de Legendre, cuyas raíces definen los <strong>nodos</strong> de integración. El cálculo de la integral se aproxima mediante la siguiente suma ponderada:</p>
+<div class="arithmatex">\[\int_{a}^{b} f(x) dx \approx \sum_{k=1}^{N} w_k f(x_k)\]</div>
+<p>donde <span class="arithmatex">\(x_k\)</span> representa los nodos de colocación y <span class="arithmatex">\(w_k\)</span> los pesos asociados. Esta técnica permite obtener una convergencia acelerada, especialmente eficiente para funciones con comportamiento oscilatorio como la que se estudia en este proyecto.</p>
+<h2 id="objetivos-del-proyecto">Objetivos del Proyecto</h2>
+<p>La presente documentación y el código asociado tienen como finalidad cumplir con los siguientes objetivos técnicos:</p>
+<ol>
+<li><strong>Cálculo de la Integral de Fresnel:</strong> Evaluar numéricamente la integral <span class="arithmatex">\(\int_{0}^{\pi} \sin(x^2) dx\)</span> mediante una implementación propia del algoritmo de Gauss-Legendre.</li>
+<li><strong>Estudio de Convergencia:</strong> Analizar cómo varía la precisión del resultado en función del incremento en el número de puntos de evaluación <span class="arithmatex">\(N\)</span>.</li>
+<li><strong>Generación de Documentación Técnica:</strong> Proveer una referencia clara y reproducible de las funciones, tutoriales de uso y fundamentos teóricos del módulo desarrollado.</li>
+</ol>
+<h2 id="resultados-esperados">Resultados Esperados</h2>
+<p>A través de la aplicación estratégica de los nodos de Gauss, se espera que el sistema alcance una estabilidad de alta fidelidad con un valor de convergencia cercano a:</p>
+<div class="arithmatex">\[I \approx 0.77265\]</div>
+<p>Dicho valor será utilizado como el estándar de referencia para validar la eficiencia y la precisión del código implementado frente a las oscilaciones de la función en el intervalo <span class="arithmatex">\([0, \pi]\)</span>.</p>
 
 
 
