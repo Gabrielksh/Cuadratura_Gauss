@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ortogonalidad-y-polinomios-de-legendre" class="md-skip">
+        <a href="#investigacion-teorica-el-desafio-de-las-integrales-de-fresnel" class="md-skip">
           Skip to content
         </a>
       
@@ -231,6 +231,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -273,6 +275,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -281,10 +285,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ortogonalidad-y-polinomios-de-legendre" class="md-nav__link">
+  <a href="#1-caracterizacion-del-problema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ortogonalidad y Polinomios de Legendre
+        1. Caracterización del Problema
       
     </span>
   </a>
@@ -292,10 +296,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#calculo-de-pesos" class="md-nav__link">
+  <a href="#2-aplicaciones-en-la-ciencia-y-la-ingenieria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cálculo de Pesos
+        2. Aplicaciones en la Ciencia y la Ingeniería
       
     </span>
   </a>
@@ -303,21 +307,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#transformacion-de-intervalo-mapeo-lineal" class="md-nav__link">
+  <a href="#3-metodologia-cuadratura-de-gauss-legendre" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Transformación de Intervalo (Mapeo Lineal)
+        3. Metodología: Cuadratura de Gauss-Legendre
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Metodología: Cuadratura de Gauss-Legendre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-del-metodo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes del Método:
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#la-integral-de-fresnel" class="md-nav__link">
+  <a href="#4-analisis-de-convergencia-y-eficiencia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La Integral de Fresnel
+        4. Análisis de Convergencia y Eficiencia
       
     </span>
   </a>
@@ -403,6 +424,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -411,10 +434,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ortogonalidad-y-polinomios-de-legendre" class="md-nav__link">
+  <a href="#1-caracterizacion-del-problema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ortogonalidad y Polinomios de Legendre
+        1. Caracterización del Problema
       
     </span>
   </a>
@@ -422,10 +445,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#calculo-de-pesos" class="md-nav__link">
+  <a href="#2-aplicaciones-en-la-ciencia-y-la-ingenieria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cálculo de Pesos
+        2. Aplicaciones en la Ciencia y la Ingeniería
       
     </span>
   </a>
@@ -433,21 +456,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#transformacion-de-intervalo-mapeo-lineal" class="md-nav__link">
+  <a href="#3-metodologia-cuadratura-de-gauss-legendre" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Transformación de Intervalo (Mapeo Lineal)
+        3. Metodología: Cuadratura de Gauss-Legendre
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Metodología: Cuadratura de Gauss-Legendre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-del-metodo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes del Método:
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#la-integral-de-fresnel" class="md-nav__link">
+  <a href="#4-analisis-de-convergencia-y-eficiencia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La Integral de Fresnel
+        4. Análisis de Convergencia y Eficiencia
       
     </span>
   </a>
@@ -471,25 +511,26 @@
 
 
 
-  <h1>Teoría y Explicación</h1>
-
-<p>Matemáticos: Cuadratura de Gauss-Legendre</p>
-<p>La Cuadratura Gaussiana es un método de integración numérica que optimiza la precisión al seleccionar estratégicamente los puntos de evaluación (nodos) y sus pesos asociados. A diferencia de las reglas de Newton-Cotes, donde los puntos son equiespaciados, este método permite integrar exactamente polinomios de grado hasta <span class="arithmatex">\(2n-1\)</span> usando solo <span class="arithmatex">\(n\)</span> puntos.</p>
-<h2 id="ortogonalidad-y-polinomios-de-legendre">Ortogonalidad y Polinomios de Legendre</h2>
-<p>El núcleo del método es el uso de los <strong>Polinomios de Legendre</strong> <span class="arithmatex">\(P_n(x)\)</span>, los cuales forman una base ortogonal en el intervalo <span class="arithmatex">\([-1, 1]\)</span> bajo la función de peso <span class="arithmatex">\(w(x) = 1\)</span>:</p>
-<div class="arithmatex">\[\int_{-1}^{1} P_m(x) P_n(x) dx = \frac{2}{2n+1} \delta_{mn}\]</div>
-<p>Los nodos de integración <span class="arithmatex">\(x_i\)</span> son las raíces de <span class="arithmatex">\(P_n(x)\)</span>. Al utilizar estas raíces, el error de la aproximación se minimiza drásticamente.</p>
-<h2 id="calculo-de-pesos">Cálculo de Pesos</h2>
-<p>Los pesos <span class="arithmatex">\(w_i\)</span> se derivan de la propiedad de que la suma debe ser exacta para polinomios. La fórmula cerrada utilizada es:</p>
-<div class="arithmatex">\[w_i = \frac{2}{(1-x_i^2) [P'_n(x_i)]^2}\]</div>
-<p>Donde <span class="arithmatex">\(P'_n(x_i)\)</span> es la derivada del polinomio de Legendre evaluada en el nodo <span class="arithmatex">\(x_i\)</span>.</p>
-<h2 id="transformacion-de-intervalo-mapeo-lineal">Transformación de Intervalo (Mapeo Lineal)</h2>
-<p>Dado que los nodos y pesos estándar están definidos para el intervalo <span class="arithmatex">\([-1, 1]\)</span>, para resolver nuestra integral en el dominio <span class="arithmatex">\([0, \pi]\)</span>, aplicamos una transformación lineal (mapeo):</p>
-<div class="arithmatex">\[x_i = \frac{b-a}{2}\xi_i + \frac{b+a}{2}$$
-$$w_i = w_{i,\text{std}} \frac{b-a}{2}\]</div>
-<p>Donde <span class="arithmatex">\(\xi_i\)</span> representa el nodo en el intervalo estándar y <span class="arithmatex">\(x_i\)</span> el nodo escalado.</p>
-<h2 id="la-integral-de-fresnel">La Integral de Fresnel</h2>
-<p>El problema a resolver, <span class="arithmatex">\(I = \int_{0}^{\pi} \sin(x^2) dx\)</span>, es una variante de las <strong>integrales de Fresnel</strong>. Estas funciones son fundamentales en la óptica física para describir patrones de difracción. Debido a su naturaleza oscilatoria y la carencia de una primitiva elemental, la Cuadratura Gaussiana es el método más eficiente para alcanzar la convergencia con un costo computacional mínimo.</p>
+<h1 id="investigacion-teorica-el-desafio-de-las-integrales-de-fresnel">Investigación Teórica: El Desafío de las Integrales de Fresnel</h1>
+<p>En este apartado se documenta la naturaleza del problema matemático abordado y la justificación técnica detrás de la elección del método numérico implementado.</p>
+<h2 id="1-caracterizacion-del-problema">1. Caracterización del Problema</h2>
+<p>La función objeto de estudio es <span class="arithmatex">\(f(x) = \sin(x^2)\)</span>, cuya integración en el dominio <span class="arithmatex">\([0, \pi]\)</span> da lugar a una variante de las denominadas <strong>Integrales de Fresnel</strong>. </p>
+<p>Se ha determinado que estas funciones poseen una particularidad fundamental: <strong>carecen de una primitiva elemental</strong>. Esto implica que el cálculo de la integral no puede resolverse mediante métodos analíticos tradicionales (como la sustitución o la integración por partes), lo que hace imperativo el uso de herramientas de la física computacional para obtener una aproximación numérica precisa.</p>
+<h2 id="2-aplicaciones-en-la-ciencia-y-la-ingenieria">2. Aplicaciones en la Ciencia y la Ingeniería</h2>
+<p>La relevancia de este problema trasciende el ámbito teórico. Se ha identificado que estas integrales son esenciales en áreas como:
+* <strong>Óptica Física:</strong> Se utilizan para modelar los patrones de difracción de la luz al atravesar una rendija.
+* <strong>Diseño de Infraestructura:</strong> En la ingeniería civil, se emplean para el cálculo de curvas de transición (clotoides), garantizando cambios de dirección seguros en carreteras y vías férreas.</p>
+<h2 id="3-metodologia-cuadratura-de-gauss-legendre">3. Metodología: Cuadratura de Gauss-Legendre</h2>
+<p>Para resolver la carencia de una solución analítica, se emplea el método de la <strong>Cuadratura Gaussiana</strong>. A diferencia de las reglas de Newton-Cotes, que utilizan intervalos equiespaciados, este método optimiza la precisión mediante la selección estratégica de puntos de evaluación denominados <strong>nodos</strong>.</p>
+<h3 id="componentes-del-metodo">Componentes del Método:</h3>
+<ul>
+<li><strong>Nodos (<span class="arithmatex">\(x_i\)</span>):</strong> Se definen como las raíces de los Polinomios de Legendre. Estos puntos representan las ubicaciones óptimas donde se debe "muestrear" la función para minimizar el error.</li>
+<li><strong>Pesos (<span class="arithmatex">\(w_i\)</span>):</strong> Representan la importancia relativa asignada a cada nodo para garantizar que la suma ponderada sea exacta para polinomios de grado hasta <span class="arithmatex">\(2n-1\)</span>.</li>
+<li><strong>Mapeo Lineal:</strong> Dado que los nodos y pesos se calculan originalmente para el intervalo estándar <span class="arithmatex">\([-1, 1]\)</span>, se aplica una transformación de coordenadas para escalar el método al intervalo físico requerido de <span class="arithmatex">\([0, \pi]\)</span>.</li>
+</ul>
+<h2 id="4-analisis-de-convergencia-y-eficiencia">4. Análisis de Convergencia y Eficiencia</h2>
+<p>Debido a la naturaleza oscilatoria de <span class="arithmatex">\(\sin(x^2)\)</span>, los métodos de orden inferior suelen requerir una densidad de puntos muy elevada. Sin embargo, se observa que la Cuadratura Gaussiana logra una estabilidad de cinco cifras decimales con un número reducido de evaluaciones.</p>
+<p>Al aplicar el método, se alcanza un valor de convergencia de aproximadamente <strong>0.77265</strong>. Este resultado confirma que la técnica empleada es la herramienta óptima para abordar funciones con comportamientos complejos donde los recursos computacionales deben ser utilizados con eficiencia.</p>
 
 
 
