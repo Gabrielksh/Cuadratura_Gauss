@@ -23,7 +23,7 @@
     
     
       
-        <title>Tutorial - Tarea 2 - Física Computacional</title>
+        <title>Tutorial de Uso - Cuadratura Gaussiana - Tarea 2</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#guia-de-uso-del-modulo" class="md-skip">
+        <a href="#tutorial-implementacion-y-analisis-paso-a-paso" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Tarea 2 - Física Computacional" class="md-header__button md-logo" aria-label="Tarea 2 - Física Computacional" data-md-component="logo">
+    <a href=".." title="Cuadratura Gaussiana - Tarea 2" class="md-header__button md-logo" aria-label="Cuadratura Gaussiana - Tarea 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -96,13 +96,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Tarea 2 - Física Computacional
+            Cuadratura Gaussiana - Tarea 2
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tutorial
+              Tutorial de Uso
             
           </span>
         </div>
@@ -180,13 +180,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Tarea 2 - Física Computacional" class="md-nav__button md-logo" aria-label="Tarea 2 - Física Computacional" data-md-component="logo">
+    <a href=".." title="Cuadratura Gaussiana - Tarea 2" class="md-nav__button md-logo" aria-label="Cuadratura Gaussiana - Tarea 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Tarea 2 - Física Computacional
+    Cuadratura Gaussiana - Tarea 2
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -205,7 +205,7 @@
   <span class="md-ellipsis">
     
   
-    Inicio
+    Introducción
   
 
     
@@ -232,7 +232,7 @@
   <span class="md-ellipsis">
     
   
-    Explicación
+    Teoría y Explicación
   
 
     
@@ -268,7 +268,7 @@
   <span class="md-ellipsis">
     
   
-    Tutorial
+    Tutorial de Uso
   
 
     
@@ -286,7 +286,7 @@
   <span class="md-ellipsis">
     
   
-    Tutorial
+    Tutorial de Uso
   
 
     
@@ -312,10 +312,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-requisitos-previos" class="md-nav__link">
+  <a href="#1-obtencion-de-nodos-y-pesos-estandar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Requisitos previos
+        1. Obtención de Nodos y Pesos Estándar
       
     </span>
   </a>
@@ -323,10 +323,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-importacion-y-configuracion" class="md-nav__link">
+  <a href="#2-transformacion-al-intervalo-general-a-b" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Importación y configuración
+        2. Transformación al Intervalo General [a, b]
       
     </span>
   </a>
@@ -334,10 +334,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-ejemplo-practico-integral-de-una-parabola" class="md-nav__link">
+  <a href="#3-ejemplo-completo-resolviendo-la-integral-de-fresnel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Ejemplo práctico: Integral de una parábola
+        3. Ejemplo Completo: Resolviendo la Integral de Fresnel
       
     </span>
   </a>
@@ -345,13 +345,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-consideraciones" class="md-nav__link">
+  <a href="#4-estudio-de-convergencia-del-metodo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Consideraciones:
+        4. Estudio de Convergencia del Método
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="4. Estudio de Convergencia del Método">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualizacion-de-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualización de Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -377,7 +394,7 @@
   <span class="md-ellipsis">
     
   
-    Referencia
+    Referencia del Código
   
 
     
@@ -417,10 +434,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-requisitos-previos" class="md-nav__link">
+  <a href="#1-obtencion-de-nodos-y-pesos-estandar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Requisitos previos
+        1. Obtención de Nodos y Pesos Estándar
       
     </span>
   </a>
@@ -428,10 +445,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-importacion-y-configuracion" class="md-nav__link">
+  <a href="#2-transformacion-al-intervalo-general-a-b" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Importación y configuración
+        2. Transformación al Intervalo General [a, b]
       
     </span>
   </a>
@@ -439,10 +456,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-ejemplo-practico-integral-de-una-parabola" class="md-nav__link">
+  <a href="#3-ejemplo-completo-resolviendo-la-integral-de-fresnel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Ejemplo práctico: Integral de una parábola
+        3. Ejemplo Completo: Resolviendo la Integral de Fresnel
       
     </span>
   </a>
@@ -450,13 +467,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-consideraciones" class="md-nav__link">
+  <a href="#4-estudio-de-convergencia-del-metodo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Consideraciones:
+        4. Estudio de Convergencia del Método
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="4. Estudio de Convergencia del Método">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualizacion-de-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualización de Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -477,29 +511,75 @@
 
 
 
-<h1 id="guia-de-uso-del-modulo">Guía de Uso del Módulo</h1>
-<p>En esta sección se explica cómo implementar el código y se proporcionan los pasos necesarios para asegurar que todo funcione sin problemas.</p>
-<h3 id="1-requisitos-previos">1. Requisitos previos</h3>
-<p>Para que el script funcione correctamente, se requiere tener instalada la librería <code>numpy</code>, la cual se encarga de gestionar los arreglos numéricos y los polinomios de Legendre.</p>
-<h3 id="2-importacion-y-configuracion">2. Importación y configuración</h3>
-<p>Es necesario asegurarse de que el archivo <code>quadrature.py</code> se encuentre en la misma carpeta que el script de trabajo. Posteriormente, se debe importar la función principal y definir la función matemática que se desea integrar.</p>
-<h3 id="3-ejemplo-practico-integral-de-una-parabola">3. Ejemplo práctico: Integral de una parábola</h3>
-<p>A continuación se muestra un ejemplo de cómo calcular la integral de una función cuadrática <span class="arithmatex">\(f(x) = x^2\)</span> en el intervalo de 0 a 1:</p>
-<h3 id="4-consideraciones">4. Consideraciones:</h3>
-<p>Se debe tomar en cuenta que al aumentar el valor de n_puntos, la aproximación tiende a ser más exacta. Para funciones con mayor grado de oscilación, se recomienda utilizar un valor de <span class="arithmatex">\(N\)</span> más elevado para garantizar la convergencia del resultado.</p>
-<p>```python
-import numpy as np
-from quadrature import calcular_integral_gaussiana</p>
-<h1 id="1-definicion-de-la-funcion-mediante-una-expresion-lambda">1. Definición de la función mediante una expresión lambda</h1>
-<p>f = lambda x: x**2</p>
-<h1 id="2-definicion-de-los-limites-a-b-y-el-numero-de-puntos-n">2. Definición de los límites (a, b) y el número de puntos (N)</h1>
-<h1 id="nota-para-una-funcion-polinomial-simple-con-n10-se-obtiene-alta-precision">Nota: Para una función polinomial simple, con N=10 se obtiene alta precisión.</h1>
-<p>lim_inferior = 0
-lim_superior = 1
-n_puntos = 10</p>
-<h1 id="3-llamada-a-la-funcion-de-integracion">3. Llamada a la función de integración</h1>
-<p>resultado = calcular_integral_gaussiana(f, lim_inferior, lim_superior, n_puntos)</p>
-<p>print(f"El resultado de la integral es: {resultado}")</p>
+<h1 id="tutorial-implementacion-y-analisis-paso-a-paso">Tutorial: Implementación y Análisis Paso a Paso</h1>
+<p>En este tutorial aprenderá a utilizar las herramientas del módulo <code>quadrature.py</code> para resolver problemas de integración numérica, enfocándonos en la integral proporcionada.</p>
+<h2 id="1-obtencion-de-nodos-y-pesos-estandar">1. Obtención de Nodos y Pesos Estándar</h2>
+<p>El primer paso en la Cuadratura Gaussiana consiste en determinar los puntos de evaluación (nodos) y los pesos asociados en el intervalo estándar [-1, 1].</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">quadrature</span><span class="w"> </span><span class="kn">import</span> <span class="n">gaussxw</span>
+
+<span class="c1"># Definimos el número de puntos de evaluación (N)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># Obtenemos los nodos (x) y los pesos (w) en [-1, 1]</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">gaussxw</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nodos estándar (x):&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pesos estándar (w):&quot;</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="2-transformacion-al-intervalo-general-a-b">2. Transformación al Intervalo General [a, b]</h2>
+<p>Dado que nuestra integral está en el intervalo [0, \pi], usamos la función <code>gaussxwab</code> para reescalar los nodos y los pesos al dominio físico del problema mediante un mapeo lineal.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">quadrature</span><span class="w"> </span><span class="kn">import</span> <span class="n">gaussxwab</span>
+
+<span class="c1"># Definimos los límites de integración y el número de puntos</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Obtenemos los puntos y pesos escalados al intervalo deseado</span>
+<span class="n">xp</span><span class="p">,</span> <span class="n">wp</span> <span class="o">=</span> <span class="n">gaussxwab</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Puntos escalados (xp):&quot;</span><span class="p">,</span> <span class="n">xp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pesos escalados (wp):&quot;</span><span class="p">,</span> <span class="n">wp</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="3-ejemplo-completo-resolviendo-la-integral-de-fresnel">3. Ejemplo Completo: Resolviendo la Integral de Fresnel</h2>
+<p>Uniremos todas las piezas para resolver la integral propuesta en la tarea:
+$<span class="arithmatex">\(I = \int_{0}^{\pi} \sin(x^2) dx\)</span>$</p>
+<p>Este bloque de código muestra la implementación final mediante una suma pesada, que es la esencia de la Cuadratura Gaussiana.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">quadrature</span><span class="w"> </span><span class="kn">import</span> <span class="n">gaussxwab</span>
+
+<span class="c1"># 1. Definición de la función objetivo (Integral de Fresnel)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 2. Configuración de parámetros para la resolución</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Número de puntos para una precisión inicial</span>
+
+<span class="c1"># 3. Cálculo de puntos de colocación y pesos escalados</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">gaussxwab</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 4. Cálculo de la integral (Suma pesada de f(x_i) * w_i)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El resultado de la integral para N=</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2"> es: </span><span class="si">{</span><span class="n">I</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="4-estudio-de-convergencia-del-metodo">4. Estudio de Convergencia del Método</h2>
+<p>Un aspecto crítico en la física computacional es determinar cuántos puntos de evaluación (N) son necesarios para obtener un resultado confiable. Podemos observar este comportamiento mediante el siguiente análisis iterativo:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Analizando la estabilidad del resultado según N</span>
+<span class="k">for</span> <span class="n">n_puntos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">gaussxwab</span><span class="p">(</span><span class="n">n_puntos</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="n">integral</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;N = </span><span class="si">{</span><span class="n">n_puntos</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2"> | Aproximación: </span><span class="si">{</span><span class="n">integral</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="visualizacion-de-resultados">Visualización de Resultados</h3>
+<p>Como se puede apreciar en el gráfico generado por el script <code>quadrature.py</code>, la solución se estabiliza rápidamente. Esto demuestra la superioridad de la Cuadratura Gaussiana frente a métodos de orden inferior para funciones suaves pero oscilatorias.</p>
+<p><img alt="Gráfico de Convergencia" src="../img/convergencia.png" /></p>
+<blockquote>
+<p><strong>Nota:</strong> Se verificó que para N=15 el resultado es estable hasta la quinta cifra decimal.</p>
+</blockquote>
 
 
 

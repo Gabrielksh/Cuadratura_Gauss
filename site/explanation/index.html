@@ -23,7 +23,7 @@
     
     
       
-        <title>Explicación - Tarea 2 - Física Computacional</title>
+        <title>Teoría y Explicación - Cuadratura Gaussiana - Tarea 2</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#como-funciona-la-cuadratura-gaussiana" class="md-skip">
+        <a href="#ortogonalidad-y-polinomios-de-legendre" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Tarea 2 - Física Computacional" class="md-header__button md-logo" aria-label="Tarea 2 - Física Computacional" data-md-component="logo">
+    <a href=".." title="Cuadratura Gaussiana - Tarea 2" class="md-header__button md-logo" aria-label="Cuadratura Gaussiana - Tarea 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -96,13 +96,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Tarea 2 - Física Computacional
+            Cuadratura Gaussiana - Tarea 2
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Explicación
+              Teoría y Explicación
             
           </span>
         </div>
@@ -180,13 +180,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Tarea 2 - Física Computacional" class="md-nav__button md-logo" aria-label="Tarea 2 - Física Computacional" data-md-component="logo">
+    <a href=".." title="Cuadratura Gaussiana - Tarea 2" class="md-nav__button md-logo" aria-label="Cuadratura Gaussiana - Tarea 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Tarea 2 - Física Computacional
+    Cuadratura Gaussiana - Tarea 2
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -205,7 +205,7 @@
   <span class="md-ellipsis">
     
   
-    Inicio
+    Introducción
   
 
     
@@ -231,8 +231,24 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría y Explicación
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -241,7 +257,7 @@
   <span class="md-ellipsis">
     
   
-    Explicación
+    Teoría y Explicación
   
 
     
@@ -250,6 +266,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ortogonalidad-y-polinomios-de-legendre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ortogonalidad y Polinomios de Legendre
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculo-de-pesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo de Pesos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformacion-de-intervalo-mapeo-lineal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformación de Intervalo (Mapeo Lineal)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-integral-de-fresnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La Integral de Fresnel
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -269,7 +346,7 @@
   <span class="md-ellipsis">
     
   
-    Tutorial
+    Tutorial de Uso
   
 
     
@@ -296,7 +373,7 @@
   <span class="md-ellipsis">
     
   
-    Referencia
+    Referencia del Código
   
 
     
@@ -326,8 +403,58 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ortogonalidad-y-polinomios-de-legendre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ortogonalidad y Polinomios de Legendre
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculo-de-pesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo de Pesos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformacion-de-intervalo-mapeo-lineal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformación de Intervalo (Mapeo Lineal)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-integral-de-fresnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La Integral de Fresnel
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -344,15 +471,25 @@
 
 
 
-<h1 id="como-funciona-la-cuadratura-gaussiana">¿Cómo funciona la Cuadratura Gaussiana?</h1>
-<p>A diferencia de otros métodos que usan puntos repartidos de forma igual (como la regla del trapecio), la cuadratura Gaussiana es más "inteligente" y eficiente, ya que nos permite trabajar con un muestreo mucho menor al que necesitan otros métodos para darnos un resultado preciso.</p>
-<p>Este método elige puntos específicos llamados <strong>nodos</strong> y les asigna una importancia o <strong>peso</strong>. En nuestro script, estos puntos se obtienen a partir de los <strong>polinomios de Legendre</strong>.</p>
-<p>La idea matemática es que la integral se aproxima mediante una suma pesada:</p>
-<div class="arithmatex">\[\int_{a}^{b} f(x) dx \approx \sum_{i=1}^{n} w_i f(x_i)\]</div>
-<p>Donde:
-* <span class="arithmatex">\(x_i\)</span> son los nodos (puntos de colocación).
-* <span class="arithmatex">\(w_i\)</span> son los pesos asociados a cada punto.</p>
-<p>Al final, lo que hace el código es evaluar la función solo en esos puntos estratégicos, logrando que la aproximación sea muy exacta incluso con un valor de <span class="arithmatex">\(N\)</span> pequeño.</p>
+  <h1>Teoría y Explicación</h1>
+
+<p>Matemáticos: Cuadratura de Gauss-Legendre</p>
+<p>La Cuadratura Gaussiana es un método de integración numérica que optimiza la precisión al seleccionar estratégicamente los puntos de evaluación (nodos) y sus pesos asociados. A diferencia de las reglas de Newton-Cotes, donde los puntos son equiespaciados, este método permite integrar exactamente polinomios de grado hasta <span class="arithmatex">\(2n-1\)</span> usando solo <span class="arithmatex">\(n\)</span> puntos.</p>
+<h2 id="ortogonalidad-y-polinomios-de-legendre">Ortogonalidad y Polinomios de Legendre</h2>
+<p>El núcleo del método es el uso de los <strong>Polinomios de Legendre</strong> <span class="arithmatex">\(P_n(x)\)</span>, los cuales forman una base ortogonal en el intervalo <span class="arithmatex">\([-1, 1]\)</span> bajo la función de peso <span class="arithmatex">\(w(x) = 1\)</span>:</p>
+<div class="arithmatex">\[\int_{-1}^{1} P_m(x) P_n(x) dx = \frac{2}{2n+1} \delta_{mn}\]</div>
+<p>Los nodos de integración <span class="arithmatex">\(x_i\)</span> son las raíces de <span class="arithmatex">\(P_n(x)\)</span>. Al utilizar estas raíces, el error de la aproximación se minimiza drásticamente.</p>
+<h2 id="calculo-de-pesos">Cálculo de Pesos</h2>
+<p>Los pesos <span class="arithmatex">\(w_i\)</span> se derivan de la propiedad de que la suma debe ser exacta para polinomios. La fórmula cerrada utilizada es:</p>
+<div class="arithmatex">\[w_i = \frac{2}{(1-x_i^2) [P'_n(x_i)]^2}\]</div>
+<p>Donde <span class="arithmatex">\(P'_n(x_i)\)</span> es la derivada del polinomio de Legendre evaluada en el nodo <span class="arithmatex">\(x_i\)</span>.</p>
+<h2 id="transformacion-de-intervalo-mapeo-lineal">Transformación de Intervalo (Mapeo Lineal)</h2>
+<p>Dado que los nodos y pesos estándar están definidos para el intervalo <span class="arithmatex">\([-1, 1]\)</span>, para resolver nuestra integral en el dominio <span class="arithmatex">\([0, \pi]\)</span>, aplicamos una transformación lineal (mapeo):</p>
+<div class="arithmatex">\[x_i = \frac{b-a}{2}\xi_i + \frac{b+a}{2}$$
+$$w_i = w_{i,\text{std}} \frac{b-a}{2}\]</div>
+<p>Donde <span class="arithmatex">\(\xi_i\)</span> representa el nodo en el intervalo estándar y <span class="arithmatex">\(x_i\)</span> el nodo escalado.</p>
+<h2 id="la-integral-de-fresnel">La Integral de Fresnel</h2>
+<p>El problema a resolver, <span class="arithmatex">\(I = \int_{0}^{\pi} \sin(x^2) dx\)</span>, es una variante de las <strong>integrales de Fresnel</strong>. Estas funciones son fundamentales en la óptica física para describir patrones de difracción. Debido a su naturaleza oscilatoria y la carencia de una primitiva elemental, la Cuadratura Gaussiana es el método más eficiente para alcanzar la convergencia con un costo computacional mínimo.</p>
 
 
 

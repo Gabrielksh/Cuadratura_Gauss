@@ -1,28 +1,27 @@
- Matemáticos: Cuadratura de Gauss-Legendre
+# Investigación Teórica: El Desafío de las Integrales de Fresnel
 
-La Cuadratura Gaussiana es un método de integración numérica que optimiza la precisión al seleccionar estratégicamente los puntos de evaluación (nodos) y sus pesos asociados. A diferencia de las reglas de Newton-Cotes, donde los puntos son equiespaciados, este método permite integrar exactamente polinomios de grado hasta $2n-1$ usando solo $n$ puntos.
+En este apartado se documenta la naturaleza del problema matemático abordado y la justificación técnica detrás de la elección del método numérico implementado.
 
-## Ortogonalidad y Polinomios de Legendre
-El núcleo del método es el uso de los **Polinomios de Legendre** $P_n(x)$, los cuales forman una base ortogonal en el intervalo $[-1, 1]$ bajo la función de peso $w(x) = 1$:
+## 1. Caracterización del Problema
+La función objeto de estudio es $f(x) = \sin(x^2)$, cuya integración en el dominio $[0, \pi]$ da lugar a una variante de las denominadas **Integrales de Fresnel**. 
 
-$$\int_{-1}^{1} P_m(x) P_n(x) dx = \frac{2}{2n+1} \delta_{mn}$$
+Se ha determinado que estas funciones poseen una particularidad fundamental: **carecen de una primitiva elemental**. Esto implica que el cálculo de la integral no puede resolverse mediante métodos analíticos tradicionales (como la sustitución o la integración por partes), lo que hace imperativo el uso de herramientas de la física computacional para obtener una aproximación numérica precisa.
 
-Los nodos de integración $x_i$ son las raíces de $P_n(x)$. Al utilizar estas raíces, el error de la aproximación se minimiza drásticamente.
+## 2. Aplicaciones en la Ciencia y la Ingeniería
+La relevancia de este problema trasciende el ámbito teórico. Se ha identificado que estas integrales son esenciales en áreas como:
+* **Óptica Física:** Se utilizan para modelar los patrones de difracción de la luz al atravesar una rendija.
+* **Diseño de Infraestructura:** En la ingeniería civil, se emplean para el cálculo de curvas de transición (clotoides), garantizando cambios de dirección seguros en carreteras y vías férreas.
 
-## Cálculo de Pesos
-Los pesos $w_i$ se derivan de la propiedad de que la suma debe ser exacta para polinomios. La fórmula cerrada utilizada es:
+## 3. Metodología: Cuadratura de Gauss-Legendre
+Para resolver la carencia de una solución analítica, se emplea el método de la **Cuadratura Gaussiana**. A diferencia de las reglas de Newton-Cotes, que utilizan intervalos equiespaciados, este método optimiza la precisión mediante la selección estratégica de puntos de evaluación denominados **nodos**.
 
-$$w_i = \frac{2}{(1-x_i^2) [P'_n(x_i)]^2}$$
+### Componentes del Método:
+* **Nodos ($x_i$):** Se definen como las raíces de los Polinomios de Legendre. Estos puntos representan las ubicaciones óptimas donde se debe "muestrear" la función para minimizar el error.
+* **Pesos ($w_i$):** Representan la importancia relativa asignada a cada nodo para garantizar que la suma ponderada sea exacta para polinomios de grado hasta $2n-1$.
+* **Mapeo Lineal:** Dado que los nodos y pesos se calculan originalmente para el intervalo estándar $[-1, 1]$, se aplica una transformación de coordenadas para escalar el método al intervalo físico requerido de $[0, \pi]$.
 
-Donde $P'_n(x_i)$ es la derivada del polinomio de Legendre evaluada en el nodo $x_i$.
+## 4. Análisis de Convergencia y Eficiencia
+Debido a la naturaleza oscilatoria de $\sin(x^2)$, los métodos de orden inferior suelen requerir una densidad de puntos muy elevada. Sin embargo, se observa que la Cuadratura Gaussiana logra una estabilidad de cinco cifras decimales con un número reducido de evaluaciones.
 
-## Transformación de Intervalo (Mapeo Lineal)
-Dado que los nodos y pesos estándar están definidos para el intervalo $[-1, 1]$, para resolver nuestra integral en el dominio $[0, \pi]$, aplicamos una transformación lineal (mapeo):
 
-$$x_i = \frac{b-a}{2}\xi_i + \frac{b+a}{2}$$
-$$w_i = w_{i,\text{std}} \frac{b-a}{2}$$
-
-Donde $\xi_i$ representa el nodo en el intervalo estándar y $x_i$ el nodo escalado.
-
-## La Integral de Fresnel
-El problema a resolver, $I = \int_{0}^{\pi} \sin(x^2) dx$, es una variante de las **integrales de Fresnel**. Estas funciones son fundamentales en la óptica física para describir patrones de difracción. Debido a su naturaleza oscilatoria y la carencia de una primitiva elemental, la Cuadratura Gaussiana es el método más eficiente para alcanzar la convergencia con un costo computacional mínimo.
+Al aplicar el método, se alcanza un valor de convergencia de aproximadamente **0.77265**. Este resultado confirma que la técnica empleada es la herramienta óptima para abordar funciones con comportamientos complejos donde los recursos computacionales deben ser utilizados con eficiencia.
